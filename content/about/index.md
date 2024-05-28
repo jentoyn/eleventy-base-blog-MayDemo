@@ -6,4 +6,4 @@ eleventyNavigation:
 ---
 # About Me
 
-I am a person that does cool stuff.
+I am a person that does cool stuff!
