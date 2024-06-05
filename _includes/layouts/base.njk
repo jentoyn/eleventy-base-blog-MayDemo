@@ -35,29 +35,57 @@
 		<style>{% getBundle "css" %}</style>
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+
+		{# Font #}
+		<link rel="stylesheet" href="https://use.typekit.net/ksv5fdp.css">
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/" class="home-link"><img src="/img/logo-black.png" alt="JT Logo" width="65"></a><a href="/" class="home-link">{{ metadata.title }}</a>
+		{# Header #}
+		<div class="container">
+    		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 ">
+				<a href="/" class="home-link"><img src="/img/logo-black.png" alt="JT Logo" width="65"></a>
+      			<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+					<span class="fs-3" style="font-family:abhaya-libre">jennifer toyn</span>
+				</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+				<nav>
+      				<ul class="nav">
+       		 			{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+						{%- endfor %}
+      				</ul>
+				</nav>
 
+			</header>	
+		</div>
+		{# Header ends #}
+    
 		<main id="skip">
 			{{ content | safe }}
 		</main>
 
-		<footer></footer>
+		{# Footer Begins #}
+		<footer>
+			<div class="container">
+  				<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    				<p class="col-md-4 mb-0 text-muted">&copy; 2024 Jennifer Toyn</p>
+
+    				<a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      				<img src="/img/logo-black.png" alt="JT Logo" width="40"></a>
+    				</a>
+
+   					<ul class="nav col-md-4 justify-content-end">
+      					{%- for entry in collections.all | eleventyNavigation %}
+							<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+						{%- endfor %}
+   					</ul>
+  				</footer>
+			</div>
+		</footer>
+		{# Footer ends #}
 		
 		{# Bootstrap JS #}
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

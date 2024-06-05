@@ -1,4 +1,11 @@
 /* Defaults */
+@font-face{
+	font-family: "abhaya-libre", serif;
+	src: url('https://use.typekit.net/ksv5fdp.css');
+	font-weight: 400;
+	font-style: normal;
+}
+
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
@@ -41,6 +48,8 @@
 	box-sizing: border-box;
 }
 
+
+
 html,
 body {
 	padding: 0;
@@ -52,13 +61,8 @@ body {
 html {
 	overflow-y: scroll;
 }
-body {
-	max-width: 40em;
-}
 
-header{
-	width:100%
-}
+
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
@@ -69,6 +73,10 @@ header{
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+}
+
+h1{
+	font-family:"abhaya-libre",serif;
 }
 
 p:last-child {
@@ -95,13 +103,15 @@ a[href]:active {
 
 main {
 	padding: 1rem;
+	max-width:60em;
+	margin:auto
 }
 main :first-child {
 	margin-top: 0;
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	background-color: #fff;
 }
 header:after {
 	content: "";
