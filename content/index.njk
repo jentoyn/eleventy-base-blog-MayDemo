@@ -5,9 +5,15 @@ eleventyNavigation:
   order: 1
 numberOfLatestPostsToShow: 3
 ---
+
+<h1>Aspiring Web Developer</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor ultrices consectetur. Morbi suscipit, ligula vel fermentum ullamcorper, ante tellus rutrum urna, nec faucibus magna urna eu urna. Quisque ut lorem et nisi bibendum scelerisque non eget sapien. In eget ligula magna. Nullam ornare ultrices nisl, ut facilisis odio pretium sit amet. Suspendisse vestibulum facilisis diam, sed fringilla orci luctus id. Donec luctus vitae tortor quis cursus. Phasellus suscipit, risus eu vehicula mollis, nunc mauris iaculis elit, et volutpat magna quam vel dui. Donec blandit eleifend tortor, efficitur porta odio egestas non. Duis urna quam, egestas non eros a, pharetra eleifend purus.</p>
+
+
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+<h1>Latest {{ latestPostsCount }} Blog Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
