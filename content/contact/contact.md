@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 # Contact Me
 
-<form>
+<form name="Contact" netlify>
 <div class="row">
   <div class="col">
     <label for="firstNameInput" class="form-label">First Name</label>
